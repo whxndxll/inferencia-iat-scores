@@ -1,11 +1,12 @@
 ---
 title: "Análise de uma replicação"
+author: "Whendell Feijó Magalhães"
 output:
     html_document:
     df_print: paged
 theme: sandstone
 params: 
-    arquivo_dados: "data/sdsu .csv"
+    arquivo_dados: "data/wisc .csv"
 ---
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
@@ -66,7 +67,7 @@ iat %>%
 ```{r}
 iat %>% 
     group_by(sex) %>% 
-    summarise(media = mean(d_art))
+    summarise(media = mean(d_art), d_padrao = sd(d_art), N = n())
 ```
 
 
@@ -144,9 +145,10 @@ grid.arrange(p1, p2, ncol = 2)
 
 ```
 
+
 ### Conclusão
 
-Em média, as mulheres que participaram do experimento tiveram uma associação implícita (medida pelo IAT) com a matemárica **positiva/negativa** e **fraca/média/forte** (média XXX, desv. padrão YYY, N = ZZZ). Homens tiveram uma associação **positiva/negativa** com a matemática, portanto **maior/menor** que a das mulheres (média , desv. padrão, N = ). Houve portanto uma **grande/considerável/pequena** diferença entre homens e mulheres (diferença das médias XXXX, 95% CI [CCC, DDD]). A partir desta amostra, estimamos que...
+Em média, as mulheres que participaram do experimento tiveram uma associação implícita (medida pelo IAT) com a matemática **negativa** e **média/forte** (média 0.616, desv. padrão 0.412, N = 75). Homens tiveram uma associação **negativa** com a matemática e **fraca/média**, **menor** que a das mulheres (média 0.244, desv. padrão 0.551, N = 16). Houve portanto uma **considerável** diferença entre homens e mulheres (diferença das médias -0.372, 95% CI [-0.656, -0.081]). A partir desta amostra, estimamos que mulheres têm uma associação negativa mais forte, porém não é claro se essa diferença é grande, moderada ou pequena. É necessário coletar mais dados para determinar se a diferença é relevante ou negligenciável.
 
 --- 
 *Exemplos de possíveis conclusões para completar*
